@@ -19,8 +19,10 @@
           autocomplete="name"
           minlength="1"
           maxlength="100"
+          aria-describedby="name-rules error-area"
           required
         />
+        <small id="name-rules">Enter 1-100 characters.</small>
       </form-group>
 
       <form-group>
@@ -30,8 +32,10 @@
           name="email"
           id="email"
           autocomplete="email"
+          aria-describedby="email-rules error-area"
           required
         />
+        <small id="email-rules">Enter a valid email address.</small>
       </form-group>
 
       <form-group>
@@ -41,15 +45,29 @@
           id="comments"
           minlength="10"
           maxlength="1000"
+          aria-describedby="comments-rules info-area error-area"
           required
         ></textarea>
+        <small id="comments-rules">Enter 10-1000 characters.</small>
       </form-group>
 
       <form-group>
         <input type="hidden" name="possible_bot" value="true" />
       </form-group>
 
+      <form-group>
+        <input type="hidden" name="form-errors" id="form-errors" />
+      </form-group>
+
+      <!-- Error message area -->
+      <div id="error-area" role="status" aria-live="polite"></div>
+
+      <!-- Information message area -->
+      <div id="info-area" role="status" aria-live="polite"></div>
+
       <button type="submit">Submit</button>
     </form>
+
+    <script src="form.js" defer></script>
   </body>
 </html>

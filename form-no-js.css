@@ -64,3 +64,13 @@ p {
   align-self: flex-start;
   margin-bottom: 15px;
 }
+
+#info-area {
+  color: #374151;
+  font-size: 0.85rem;
+}
+
+#info-area.warning {
+  color: #9a3412;
+  font-weight: bold;
+}
