@@ -3,25 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="form-no-js.css" />
     <title>Form Page</title>
   </head>
   <body>
     <form action="https://httpbin.org/post" method="POST">
+      <p>* indicates required fields</p>
+
       <form-group>
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" required />
+        <label for="name">Name *</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          autocomplete="name"
+          minlength="1"
+          maxlength="100"
+          required
+        />
       </form-group>
 
       <form-group>
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" required />
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="email"
+          required
+        />
       </form-group>
 
       <form-group>
-        <label for="comments">Comments: </label>
-        <textarea name="comments" id="comments"></textarea>
+        <label for="comments">Comments *</label>
+        <textarea
+          name="comments"
+          id="comments"
+          minlength="10"
+          maxlength="1000"
+          required
+        ></textarea>
+      </form-group>
+
+      <form-group>
+        <input type="hidden" name="possible_bot" value="true" />
       </form-group>
 
       <button type="submit">Submit</button>

@@ -1,11 +1,66 @@
+@import url(index.css);
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
+
   max-width: 400px;
-  height: 500px;
+  margin: 100px auto;
+  padding: 35px;
+
+  background-color: #c7c1c1;
+  color: #2d2a2a;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  box-sizing: border-box;
 }
 
 form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 12px;
+}
+
+/* Required fields */
+input:required,
+textarea:required {
+  border: 2px solid gray;
+}
+
+/* Invalid input after user interaction */
+input:user-invalid,
+textarea:user-invalid {
+  border-color: red;
+  outline: 1px solid red;
+}
+
+/* Valid input after user interaction */
+input:user-valid,
+textarea:user-valid {
+  border-color: green;
+} 
+
+/* Keep keyboard focus visible */
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #6a6a74;
+  outline-offset: 3px;
+}
+
+p {
+  font-size: 0.85rem;
+  color: #555;
+  align-self: flex-start;
+  margin-bottom: 15px;
 }
